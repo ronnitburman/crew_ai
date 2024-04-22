@@ -39,7 +39,8 @@ def main():
         tasks=[research_task,
                industry_analysis_task,
                meeting_strategy_task,
-               summary_and_briefing_task]
+               summary_and_briefing_task],
+        process='sequential'
     )
 
     result = crew.kickoff()
