@@ -12,14 +12,14 @@ def main():
     meeting_context = input("what is the context of the meeting? \n")
     meeting_objective = input("what is your objective for this meeting?\n")
 
-    tasks = MeetingPrepTasks
-    agents = MeetingPrepAgents
+    tasks = MeetingPrepTasks()
+    agents = MeetingPrepAgents()
 
     #creating individual agents
     research_agent = agents.research_agent()
     industry_analysis_agent = agents.industry_analysis_agent()
-    meeting_strategy_agent = agents.meeting_strategy_agent
-    summary_and_briefing_agent = agents.summary_and_briefing_agent
+    meeting_strategy_agent = agents.meeting_strategy_agent()
+    summary_and_briefing_agent = agents.summary_and_briefing_agent()
 
     #creating tasks
     research_task = tasks.research_task(research_agent, meeting_participants, meeting_context)
@@ -39,8 +39,8 @@ def main():
         tasks=[research_task,
                industry_analysis_task,
                meeting_strategy_task,
-               summary_and_briefing_task],
-        process='sequential'
+               summary_and_briefing_task]
+        # process='sequential'
     )
 
     result = crew.kickoff()

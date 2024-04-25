@@ -9,7 +9,7 @@ class MeetingPrepAgents():
         return Agent(
             role="Research Specialist",
             goal="conduct thorough research on people and companies involved in the meeting",
-            tools=ExaSearchToolset.tools,
+            tools=ExaSearchToolset.tools(),
             backstory=dedent("""
             As a Research Specialist, your mission is to uncover detailed information about
             the individuals and entities participating in the meeting. your insights will 
@@ -22,7 +22,7 @@ class MeetingPrepAgents():
         return Agent(
             role="Industry Analyst",
             goal="Analyze the current industry trends, challenges, and opportunities",
-            tools=ExaSearchToolset.tools,
+            tools=ExaSearchToolset.tools(),
             backstory=dedent("""
             As an Industrial Analyst, your analysis will identify key trends, 
             challenges facing the industry, and potential opportunities that could be 
